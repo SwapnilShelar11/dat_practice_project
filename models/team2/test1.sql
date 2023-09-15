@@ -1,2 +1,2 @@
 {{config(materialized = 'table')}}
-select * from dev.test.call_center
+select * from {{ref('test')}} where cc_country = 'United States'
