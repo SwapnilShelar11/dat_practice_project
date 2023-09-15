@@ -1,2 +1,2 @@
 {{config(materialized = 'table')}}
-select * from dev.test.call_center where cc_manager = 'Wayne Ray'
+select * from {{ref('test1')}} where cc_manager = 'Wayne Ray'
