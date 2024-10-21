@@ -33,6 +33,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   my_new_project:
-    # Applies to all files under models/example/
-    example:
-      materialized: view
+    staging:
+      retail_sraw:
+        +schema: sraw
+    
+    core:
+      retail_consumer:
+        +schema: consumer
+
+    fulfillment:
+      retail_fulfillment:
+        +schema: fulfillment
