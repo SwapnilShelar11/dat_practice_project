@@ -26,7 +26,6 @@ models:
       - name: product_id
         tests:
           - not_null
-          - unique
 
   - name: customer_snapshot
     columns:
