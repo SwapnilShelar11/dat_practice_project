@@ -10,7 +10,7 @@ with product_metrics as (
         min(order_date) as first_sale_date,  -- Date of first sale
         max(order_date) as last_sale_date,  -- Date of last sale
         datediff('day', min(order_date), max(order_date)) as sale_window_days  -- Time between first and last sale
-    from {{ref("order")}}
+    from {{ref("orders")}}
     group by product_id
 ),
 
@@ -36,7 +36,7 @@ combined_data as (
             else 'New Product'
         end as product_lifecycle_stage,  -- Derived lifecycle stage based on stock and sales history
         {{ get_utc_timestamp() }} as rec_cre_tms  -- Mart creation timestamp
-    from {{ref("product")}} p
+    from {{ref("products")}} p
     left join product_metrics pm on p.product_id = pm.product_id
 )
 

@@ -9,7 +9,7 @@ with order_metrics as (
         min(order_date) as first_order_date,  -- Date of first order
         max(order_date) as last_order_date,  -- Date of last order
         datediff('day', min(order_date), max(order_date)) as order_window_days  -- Time between first and last order
-    from {{ref("order")}}
+    from {{ref("orders")}}
     group by customer_id
 ),
 
