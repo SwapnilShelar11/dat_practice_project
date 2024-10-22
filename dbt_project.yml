@@ -45,7 +45,6 @@ models:
       retail_fulfillment:
         +schema: fulfillment
 
-
 snapshots:
   my_new_project:
     core:
