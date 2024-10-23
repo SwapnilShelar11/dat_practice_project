@@ -7,7 +7,8 @@ with
             product_name::string as product_name,
             category::string as category,
             price::decimal(10, 2) as price,
-            stock_quantity::int as stock_quantity
+            stock_quantity::int as stock_quantity,
+            record_added_timestamp::timestamp as record_added_timestamp
         from {{ source("retail_raw", "product_raw") }}
     )
 select *,

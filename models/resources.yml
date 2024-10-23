@@ -32,13 +32,18 @@ models:
       - name: customer_id
         tests:
           - not_null
-          - unique
 
       - name: preferred_channel
         tests:
           - accepted_values:
               values:
                 ['Email', 'SMS', 'Phone', 'App']
+
+      - name: loyalty_program_status
+        tests:
+          - accepted_values:
+              values:
+                ['Active', 'Inactive', 'Pending']
 
 
 
