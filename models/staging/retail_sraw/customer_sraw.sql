@@ -14,7 +14,8 @@ with
             phone_number::string as phone_number,
             preferred_channel::string as preferred_channel,
             loyalty_program_status::string as loyalty_program_status,
-            customer_feedback::string as customer_feedback
+            customer_feedback::string as customer_feedback,
+            record_added_timestamp::timestamp as record_added_timestamp 
         from {{ source("retail_raw", "customer_raw") }}
     )
 select *,
