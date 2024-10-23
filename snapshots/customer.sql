@@ -10,7 +10,6 @@
         )
     }}
 
-    -- Select data from the 'sraw' table (sourced from the retail_raw.customer_raw)
     select
         customer_id,
         customer_name,
